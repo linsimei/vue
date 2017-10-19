@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="./vue.js"></script>
+    <script src="./vue-resource.js"></script>
+</head>
+<body>
+    <div id="app">
+     <ol>
+         <todo-item  v-for="item in items" v-bind:todo="item" v-bind:key="item.id" >
+
+         </todo-item>
+     </ol>
+    </div>
+</body>
+
+</html>
+
+<script>
+    Vue.component('todo-item',{
+        props:['todo'],
+        template:'<li>{{todo.text}}</li>'
+    })
+    var app = new Vue({
+        el: '#app',
+        data: {
+            items:[
+                { id:0,text:'蔬菜1'},
+                { id:1,text:'蔬菜2'},
+                { id:2,text:'蔬菜3'}
+            ]
+         
+        }
+      })
+    
+
+</script>

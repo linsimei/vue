@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>快递物流查询</title>
+  <script src="vue.min.js"></script>
+  <link rel="stylesheet" href="css.css">
+  <script src="./jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div id=container>
+    <form>
+      <select  v-model='com' class="company" id="company">
+        <option  v-for="item in company" v-bind:value="item.name">{{item.value}}</option>
+      </select>
+      <input class="NO" type="text" v-bind:value="no" />
+      <button type="button" id="search" class="search" v-on:click="getTraces">搜索</button>
+    </form>
+    <div id="info">
+      <div v-for="item in Traces">{{item.AcceptStation}}</div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+
+<script src="./vue.js"></script> 

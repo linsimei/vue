@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./css/Cart.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <h3 class="cart-title">购物车功能效果</h3>
+        <div class="cart-sub-title"><span>购物车</span></div>
+        <div class="cart-item-list">
+            <table>
+                <tr class="cart-item-head">
+                    <th><span>商品信息</span></th>
+                    <th><span>商品金额</span></th>
+                    <th><span>商品数量</span></th>
+                    <th><span>总金额</span></th>
+                    <th><span>编辑</span></th>
+                </tr>
+                <tr class="cart-item-content" v-for="item in productList">
+                    <td>
+                        <div class="cart-item-Wrapper">
+                            <i class="cart-item-slected pointer" v-bind:class="{'check': item.checked}" @click="selectedProduct(item)"></i>
+                            <i class="cart-item-imgWrapper pointer"><img class="cart-item-img" v-bind:src="item.productImage" alt="烟"></i>
+                            <div class="cart-item-text">
+                                <a href="#" class="item-product-name pointer">{{item.productName}}</a>
+                                <a href="#">赠送：<span class="free-gift" v-for="part in item.parts">{{part.partsName}}</span></a>
+                            </div>
+                           
+                        </div>
+                    </td>
+                    <td class="item-pruduct-price">{{item.productPrice}}</td>
+                    <td class="item-pruduct-num"><span @click="changeQuantity(item,-1)" class="pointer">-</span><input v-model="item.productQuantity" type="text"><span @click="changeQuantity(item,1)" class="pointer">+</span></td>
+                    <td class="item-pruduct-totalPrice text-red">{{item.productQuantity*item.productPrice | formatMoney}}</td>
+                    <td class="item-pruduct-edit pointer"><i></i></td>
+                </tr>
+            </table>
+
+            <div class="item-pruduct-total clearfix">
+                <div class="float_l">
+                    <i class="cart-item-slected"></i><span class="pointer">全选</span><span class="pointer">取消全选</span>
+                </div>
+                <div class="Total-item float_r">
+                    <span>item total</span>
+                    <span class="totalPrice text-red">{{totalMoney | money('元')}}</span>
+                    <a href="#" class="pointer" @click="calcTotalPrice()">结算</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/vue-resource.js"></script>
+    <script src="./js/cart.js"></script>
+    
+</body>
+
+</html>

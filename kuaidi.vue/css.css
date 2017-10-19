@@ -1,0 +1,33 @@
+#container {
+      width: 960px;
+      margin: 0 auto;
+    }
+    
+    form {
+      margin: 0 auto;
+      width: 350px;
+    }
+    
+    .company,
+    .NO {
+      border: 1px solid #ccc;
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      padding: 2px;
+      margin: 5px
+    }
+    
+    .search {
+      width: 80px;
+      text-align: center;
+      padding: 2px;
+      margin: 5px
+    }
+    
+    #info {
+      width: 280px;
+      border: 1px solid #ccc;
+      text-align: left；;
+      margin: 0 auto;
+    }

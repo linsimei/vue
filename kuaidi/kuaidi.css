@@ -1,0 +1,44 @@
+body,div,form,select,option,input{
+    margin: 0；
+    padiing：0;
+}
+body{
+    font:14px/1.5 Microsoft-YaHei, Arial;
+    color:#333;
+    }
+
+
+#container{
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+
+#container form{
+   
+    margin: 50px auto;
+    
+}
+
+#container form select{
+   min-width: 120px;
+  height: 28px;
+    
+}
+#container form input{
+ height: 28px;
+  box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+
+    
+}
+#container form .search{
+  width: 80px;
+  cursor: pointer;
+  border-radius: 5px;
+    
+}
